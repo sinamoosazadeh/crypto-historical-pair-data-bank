@@ -42,7 +42,7 @@ jobs:
           cp LICENSE site/LICENSE
           cp DATA_LICENSE.md site/DATA_LICENSE.md
           cp README.md site/README.md
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
   deploy:
