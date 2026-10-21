@@ -1,0 +1,15 @@
+Asset,Requested ticker,Scope note
+BTC,BTC,Bitcoin; exchange aliases may include XBT or BCC for Bitcoin Cash (not BTC).
+ETH,ETH,Ethereum.
+SOL,SOL,Solana.
+BNB,BNB,BNB.
+DOGE,DOGE,Dogecoin.
+LTC,LTC,Litecoin.
+XRP,XRP,XRP / Ripple.
+TRX,TRX,TRON.
+BCH,BCH,Bitcoin Cash; one venue may use legacy alias BCC.
+AVAX,AVAX,Avalanche.
+DASH,DASH,Dash.
+SUI,SUI,Sui.
+ARB,ARB,Arbitrum.
+ADA,ADA,Cardano.

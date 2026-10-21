@@ -1,0 +1,52 @@
+name: Propose or update a data source
+description: Submit a source with direct evidence, instrument scope and access rules.
+title: "[Source]: "
+labels: [data-source, needs-evidence]
+body:
+  - type: input
+    id: provider
+    attributes:
+      label: Provider / archive name
+    validations:
+      required: true
+  - type: input
+    id: landing
+    attributes:
+      label: Canonical landing URL
+    validations:
+      required: true
+  - type: input
+    id: direct
+    attributes:
+      label: Direct artifact / directory URL
+      description: Provide a file or browsable listing if possible.
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access requirements observed
+      options:
+        - Anonymous static download
+        - Free registration required
+        - API key required
+        - Paid/subscription required
+        - Unknown / not checked
+    validations:
+      required: true
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Exact coverage and evidence
+      description: Include market, symbols, intervals, dates, last checked in UTC and source URLs.
+    validations:
+      required: true
+  - type: input
+    id: terms
+    attributes:
+      label: License / terms URL
+  - type: checkboxes
+    id: statements
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not invented counts or coverage and have labeled unverified fields.
+          required: true

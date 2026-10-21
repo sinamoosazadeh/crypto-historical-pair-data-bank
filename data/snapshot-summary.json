@@ -1,0 +1,68 @@
+{
+  "project": "Crypto Historical Pair Data Bank",
+  "snapshot_date": "2026-10-21",
+  "source_routes": 92,
+  "target_assets": 14,
+  "coverage_records": 10458,
+  "public_download_resource_leads": 12,
+  "distinct_matrix_interval_tokens": 31,
+  "matrix_intervals_including_unresolved": [
+    "10m",
+    "10s",
+    "12h",
+    "14d",
+    "15d",
+    "15m",
+    "1M",
+    "1MM",
+    "1d",
+    "1h",
+    "1m",
+    "1mo",
+    "1mon",
+    "1s",
+    "1w",
+    "1y",
+    "24h",
+    "2d",
+    "2h",
+    "30d",
+    "30m",
+    "3M",
+    "3d",
+    "3h",
+    "3m",
+    "4h",
+    "5m",
+    "6h",
+    "7d",
+    "8h",
+    "UNRESOLVED"
+  ],
+  "coverage_status_counts": {
+    "VERIFIED": 1110,
+    "NOT_CHECKED": 9229,
+    "NOT_APPLICABLE": 119
+  },
+  "asset_pair_status_counts": {
+    "VERIFIED": 1112,
+    "NOT_CHECKED": 9227,
+    "NOT_APPLICABLE": 119
+  },
+  "interval_status_counts": {
+    "VERIFIED": 9042,
+    "NOT_CHECKED": 1416
+  },
+  "count_status_counts": {
+    "NOT_MEASURED": 10339,
+    "NOT_APPLICABLE": 119
+  },
+  "raw_historical_files_downloaded_and_counted_in_input_research": 0,
+  "counts_note": "Published totals remain publisher claims unless a specific local artifact and row-count method are recorded.",
+  "limitations": [
+    "VERIFIED is inherited from the research matrix and may mean a limited sample or documented capability; it does not mean the full archive was downloaded or counted.",
+    "A NOT_CHECKED row is unknown, not negative evidence.",
+    "Theoretical calendar slots are not actual candle rows.",
+    "The source registry has more routes than the matrix expands; missing route rows are not proof of no data."
+  ]
+}

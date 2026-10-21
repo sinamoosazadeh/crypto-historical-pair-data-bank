@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If this catalogue, schemas or tools helped your work, please cite the repository and the version you used. Cite the upstream data provider separately for market records."
+title: "Crypto Historical Pair Data Bank"
+abstract: >-
+  Evidence-first catalogue and reproducible tooling for discovering historical
+  cryptocurrency market-pair datasets, their intervals, provenance, access paths,
+  schemas, availability status and data-quality limitations.
+type: software
+license: MIT
+version: 0.3.0
+date-released: 2026-10-22
+repository-code: https://github.com/sinamoosazadeh/crypto-historical-pair-data-bank

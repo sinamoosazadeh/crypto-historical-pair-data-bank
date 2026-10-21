@@ -1,0 +1,31 @@
+code,label,interval_kind,nominal_seconds,matrix_rows,provider_specific_semantics
+10m,10 minutes,fixed_or_provider_native,600,70,true
+10s,10 seconds,fixed_or_provider_native,10,28,true
+12h,12 hours,fixed_or_provider_native,43200,560,true
+14d,14 days,calendar_or_provider_native,,14,true
+15d,15 days,calendar_or_provider_native,,14,true
+15m,15 minutes,fixed_or_provider_native,900,882,true
+1M,Provider-native token; case-sensitive semantics must be confirmed,provider_native_case_sensitive,,504,true
+1MM,Unresolved provider-native token; do not normalize,provider_native_case_sensitive,,14,true
+1d,1 day,calendar_or_provider_native,,896,true
+1h,1 hour,fixed_or_provider_native,3600,896,true
+1m,1 minute,fixed_or_provider_native,60,924,true
+1mo,1 calendar month (native label),calendar,,42,true
+1mon,1 calendar month (native label),calendar,,14,true
+1s,1 second,fixed_or_provider_native,1,84,true
+1w,1 week,calendar_or_provider_native,,672,true
+1y,1 year,calendar_or_provider_native,,56,true
+24h,24-hour native interval,fixed_or_provider_native,86400,28,true
+2d,2 days,calendar_or_provider_native,,42,true
+2h,2 hours,fixed_or_provider_native,7200,476,true
+30d,30 days,calendar_or_provider_native,,28,true
+30m,30 minutes,fixed_or_provider_native,1800,826,true
+3M,Provider-native token; case-sensitive semantics must be confirmed,provider_native_case_sensitive,,70,true
+3d,3 days,calendar_or_provider_native,,252,true
+3h,3 hours,fixed_or_provider_native,10800,42,true
+3m,3 minutes,fixed_or_provider_native,180,448,true
+4h,4 hours,fixed_or_provider_native,14400,812,true
+5m,5 minutes,fixed_or_provider_native,300,854,true
+6h,6 hours,fixed_or_provider_native,21600,504,true
+7d,7 days,calendar_or_provider_native,,28,true
+8h,8 hours,fixed_or_provider_native,28800,308,true

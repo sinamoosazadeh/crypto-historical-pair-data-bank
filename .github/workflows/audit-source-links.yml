@@ -1,0 +1,29 @@
+name: Anonymous source-link audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 5 1 * *'
+permissions:
+  contents: read
+concurrency:
+  group: source-link-audit
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Probe registered source download links without authentication
+        run: python scripts/audit_source_urls.py --delay 1.5 --timeout 15 --output source_url_observations.jsonl
+      - name: Upload observation log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: anonymous-source-link-observations
+          path: source_url_observations.jsonl
+          if-no-files-found: warn
+          retention-days: 30

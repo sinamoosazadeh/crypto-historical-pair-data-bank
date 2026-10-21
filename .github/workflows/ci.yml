@@ -1,0 +1,70 @@
+name: CI
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12', '3.14']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Enforce English-only repository text
+        run: python scripts/check_english_only.py
+      - name: Validate catalog
+        run: python scripts/validate_catalog.py
+      - name: Check JavaScript syntax
+        run: node --check web/assets/app.js
+      - name: Check Termux publishing script syntax
+        run: bash -n scripts/termux_publish.sh
+      - name: Compile Python tooling
+        run: python -m compileall -q scripts tests
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Rebuild generated UI catalog and check for drift
+        run: |
+          cp web/assets/catalog.js /tmp/catalog.js
+          cp web/assets/coverage-data.js /tmp/coverage-data.js
+          cp catalog/sources.csv /tmp/sources.csv
+          cp catalog/coverage.csv /tmp/coverage.csv
+          cp catalog/sources.json /tmp/sources.json
+          cp catalog/assets.json /tmp/assets.json
+          cp catalog/timeframes.json /tmp/timeframes.json
+          cp catalog/download-resources.json /tmp/download-resources.json
+          cp catalog/download-resources.csv /tmp/download-resources.csv
+          cp catalog/coverage.json /tmp/coverage.json
+          cp data/interval-reference.csv /tmp/interval-reference.csv
+          cp data/snapshot-summary.json /tmp/snapshot-summary.json
+          python scripts/build_catalog.py
+          cmp /tmp/catalog.js web/assets/catalog.js
+          cmp /tmp/coverage-data.js web/assets/coverage-data.js
+          cmp /tmp/sources.csv catalog/sources.csv
+          cmp /tmp/coverage.csv catalog/coverage.csv
+          cmp /tmp/sources.json catalog/sources.json
+          cmp /tmp/assets.json catalog/assets.json
+          cmp /tmp/timeframes.json catalog/timeframes.json
+          cmp /tmp/download-resources.json catalog/download-resources.json
+          cmp /tmp/download-resources.csv catalog/download-resources.csv
+          cmp /tmp/coverage.json catalog/coverage.json
+          cmp /tmp/interval-reference.csv data/interval-reference.csv
+          cmp /tmp/snapshot-summary.json data/snapshot-summary.json
+      - name: Check required project files
+        run: |
+          test -s README.md
+          test -s DATA_LICENSE.md
+          test -s index.html
+          test -s docs/QUALITY_MODEL.md

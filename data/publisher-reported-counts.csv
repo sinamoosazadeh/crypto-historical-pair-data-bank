@@ -1,0 +1,2 @@
+Provider,Market type,Asset,Pair,Quote,Interval,Publisher-displayed records,Publisher first date,Publisher last date,Count provenance,Source URL,Local file downloaded,Local row count,Caveat
+CryptoArchive,CEX-resolved Spot archive (publisher attribution),BCH,BCH/USDT,USDT,1m,3557191,2019-11-28,2026-09-04,PUBLISHER_PAGE_COUNT_CAPTURED_VIA_SEARCH_INDEX,https://www.cryptoarchive.com.au/asset/BCH,NO,NOT_MEASURED,Publisher-displayed per-pair count; not independently counted from a downloaded CSV; not a theoretical slot count.

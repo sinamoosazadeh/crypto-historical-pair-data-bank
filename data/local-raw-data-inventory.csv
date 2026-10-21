@@ -1,0 +1,2 @@
+Data class,Local files found,Actual candle rows counted,Measurement status,Interpretation
+Raw exchange/third-party candle archives or raw API responses in this research workspace,0,0,NOT_MEASURED,"No raw data files were downloaded; 0 means zero local files/rows inspected, not zero exchange candles."

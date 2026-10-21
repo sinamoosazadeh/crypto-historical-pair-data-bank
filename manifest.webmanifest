@@ -1,0 +1,13 @@
+{
+  "name": "Crypto Historical Pair Data Bank",
+  "short_name": "Crypto Data Bank",
+  "description": "Evidence-first catalogue of historical cryptocurrency market-pair datasets.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    { "src": "./web/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible bug in the catalogue, scripts or documentation.
+title: "[Bug]: "
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include API keys, tokens, account identifiers or private data."
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      placeholder: UI / validator / archive tool / docs
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected versus actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment and version
+    validations:
+      required: true

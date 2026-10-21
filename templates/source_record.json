@@ -1,0 +1,20 @@
+{
+  "source_id": "SRC-EXAMPLE-001",
+  "name": "Example source — replace before submitting",
+  "source_class": "Exchange primary archive | third-party archive | community mirror",
+  "status": "needs_review",
+  "eligibility_note": "Not yet reviewed for anonymous access, registration, API key or payment.",
+  "market_scope": "Specify market type and scope.",
+  "data_families": ["OHLCV"],
+  "data_levels": ["Level 1"],
+  "timeframes_note": "Exact documented intervals, with documentation URL.",
+  "schema_format": "CSV in ZIP",
+  "access_mechanism": "Static direct download / other — be specific.",
+  "landing_url": "https://example.com/",
+  "download_url": "",
+  "coverage_evidence_and_limits": "Describe exact tested symbol, intervals, dates and gaps.",
+  "confidence": "Unverified",
+  "last_reviewed": "2026-10-22",
+  "verification_state": "unverified",
+  "terms_status": "not_checked"
+}

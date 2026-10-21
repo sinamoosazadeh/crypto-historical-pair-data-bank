@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinamoosazadeh.github.io/crypto-historical-pair-data-bank/schemas/download-resource.schema.json",
+  "title": "Public Download Resource Lead",
+  "description": "A provenance-bearing pointer to a public archive, dataset repository, or download index. The record does not by itself assert anonymous access or data completeness.",
+  "type": "object",
+  "required": [
+    "resource_id", "provider", "resource_name", "data_family", "market_scope",
+    "access_classification", "source_url", "direct_download_or_index_url",
+    "evidence_state", "eligibility_status", "verification_state", "snapshot_date"
+  ],
+  "properties": {
+    "resource_id": {"type": "string", "pattern": "^R[0-9]{3,}$"},
+    "provider": {"type": "string", "minLength": 1},
+    "resource_name": {"type": "string", "minLength": 1},
+    "data_family": {"type": "string"},
+    "market_scope": {"type": "string"},
+    "access_classification": {"type": "string"},
+    "intervals_or_granularity": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "direct_download_or_index_url": {"type": "string", "format": "uri"},
+    "reported_coverage": {"type": "string"},
+    "evidence_state": {"type": "string"},
+    "license_or_terms": {"type": "string"},
+    "known_limitations": {"type": "string"},
+    "next_verification_step": {"type": "string"},
+    "eligibility_status": {
+      "type": "string",
+      "enum": [
+        "static_download_candidate", "file_verification_required", "community_archive_candidate",
+        "unverified_public_root", "access_not_verified", "conditional_or_excluded",
+        "complementary_not_pair_candles", "needs_manual_classification"
+      ]
+    },
+    "verification_state": {"type": "string"},
+    "snapshot_date": {"type": "string", "format": "date"}
+  },
+  "additionalProperties": false
+}

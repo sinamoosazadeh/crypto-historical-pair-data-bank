@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "input_filename": "crypto_historical_candles_research_2026-10-21.zip",
+  "input_sha256": "249f329cbccd1b50bc19ddc9d235af1f1942674c64ac1bed1d6cca4fe654f091",
+  "snapshot_date": "2026-10-21",
+  "archive_integrity_test": "PASS",
+  "internal_sidecar_checksums": "15 entries verified",
+  "input_archive_member_count": 16,
+  "integrated_source_routes": 92,
+  "integrated_matrix_rows": 10458,
+  "target_asset_count": 14,
+  "actual_raw_candle_archives_downloaded_and_counted_in_input_pass": 0,
+  "policy": "Only English-language source files are committed. Structured CSV tables were integrated; the original workbook and non-English narrative files were not copied verbatim.",
+  "primary_destinations": [
+    "data/source-catalog.csv",
+    "data/availability-matrix.csv",
+    "data/target-assets.csv",
+    "data/binance-spot-calendar-slots.csv",
+    "data/source-claims-audit.csv",
+    "data/publisher-reported-counts.csv",
+    "data/local-raw-data-inventory.csv"
+  ],
+  "limitations": [
+    "The input research snapshot did not include raw candle archives for independent local row counting.",
+    "VERIFIED records are not equivalent to a fully downloaded and counted archive.",
+    "Publisher-reported counts and theoretical calendar slots remain separately labeled.",
+    "The archive hash identifies the user-provided research input but the ZIP itself is not bundled in this repository."
+  ]
+}

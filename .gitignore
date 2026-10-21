@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+site/
+build/
+dist/
+.coverage
+htmlcov/
+# Raw source archives do not belong in Git by default.
+raw-data/
+downloads/
+*.parquet
+*.feather
+*.arrow
+*.csv.gz
+*.zip
+*.tar
+*.tar.gz
+# Ephemeral tool output; never commit one-off observations automatically.
+source_url_observations.jsonl
+archive_count_manifest.jsonl
