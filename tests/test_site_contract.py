@@ -52,7 +52,7 @@ class SiteContractTests(unittest.TestCase):
         self.assertFalse(missing, f"service worker pre-cache files are missing: {missing}")
         self.assertNotIn("coverage.json", shell_text)
         self.assertNotIn("coverage-data.js", shell_text)
-        self.assertIn("crypto-pair-data-bank-shell-v3", text)
+        self.assertIn("crypto-pair-data-bank-shell-v4", text)
 
     def test_publish_helper_never_reads_a_token_from_command_arguments(self):
         script = (ROOT / "scripts/termux_publish.sh").read_text(encoding="utf-8")

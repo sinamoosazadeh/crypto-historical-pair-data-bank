@@ -1,10 +1,29 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "crypto-historical-pair-data-bank"
-version = "0.3.0"
-description = "Evidence-first catalogue and tools for historical cryptocurrency market-pair data"
+version = "0.4.0"
+description = "PairAtlas: evidence-first discovery of historical cryptocurrency market data"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE"]
 readme = "README.md"
+dependencies = []
+
+[project.scripts]
+pairatlas = "pairatlas.cli:main"
+crypto-data-bank = "pairatlas.cli:main"
+
+[tool.setuptools]
+packages = ["pairatlas", "pairatlas.catalog"]
+
+[tool.setuptools.package-dir]
+"pairatlas.catalog" = "catalog"
+
+[tool.setuptools.package-data]
+"pairatlas.catalog" = ["*.json", "*.csv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

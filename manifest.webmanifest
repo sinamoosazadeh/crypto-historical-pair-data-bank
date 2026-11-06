@@ -1,13 +1,18 @@
 {
-  "name": "Crypto Historical Pair Data Bank",
-  "short_name": "Crypto Data Bank",
+  "name": "PairAtlas \u2014 Historical Crypto Data",
+  "short_name": "PairAtlas",
   "description": "Evidence-first catalogue of historical cryptocurrency market-pair datasets.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1020",
-  "theme_color": "#0b1020",
+  "background_color": "#f5f7f8",
+  "theme_color": "#087f78",
   "icons": [
-    { "src": "./web/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    {
+      "src": "./web/assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
   ]
 }

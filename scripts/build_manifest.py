@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_PARTS = {'.git', '__pycache__', '.pytest_cache', '.ruff_cache', '.venv', 'venv'}
+EXCLUDED_PARTS = {'.git', '__pycache__', '.pytest_cache', '.ruff_cache', '.venv', 'venv', 'build', 'dist', 'site'}
 EXCLUDED_NAMES = {'MANIFEST.json'}
 
 def main() -> int:
@@ -20,7 +20,7 @@ def main() -> int:
         if not path.is_file() or path.name in EXCLUDED_NAMES:
             continue
         relative = path.relative_to(ROOT)
-        if any(part in EXCLUDED_PARTS for part in relative.parts) or path.suffix in {'.pyc', '.pyo'}:
+        if any(part in EXCLUDED_PARTS or part.endswith('.egg-info') for part in relative.parts) or path.suffix in {'.pyc', '.pyo'}:
             continue
         digest = hashlib.sha256()
         with path.open('rb') as stream:
@@ -28,8 +28,8 @@ def main() -> int:
                 digest.update(chunk)
         entries.append({'path': relative.as_posix(), 'bytes': path.stat().st_size, 'sha256': digest.hexdigest()})
     manifest = {
-        'project': 'Crypto Historical Pair Data Bank',
-        'version': '0.3.0',
+        'project': 'PairAtlas',
+        'version': '0.4.0',
         'generated_at_utc': datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z'),
         'hash_algorithm': 'SHA-256',
         'self_hash_excluded': True,

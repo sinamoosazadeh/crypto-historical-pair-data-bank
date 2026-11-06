@@ -28,3 +28,7 @@ downloads/
 # Ephemeral tool output; never commit one-off observations automatically.
 source_url_observations.jsonl
 archive_count_manifest.jsonl
+*.egg-info/
+build/
+dist/
+.venv/
